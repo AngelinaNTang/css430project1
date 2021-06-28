@@ -14,11 +14,13 @@ OBJ=$(addsuffix .o, $(basename $(SRCS)))
 TEST_OBJ=$(addsuffix .o, $(basename $(TEST_SRCS)))
 
 # The name of your executable
-BIN=myshell
+BIN=example
 TEST_BIN=tests
 CPPFLAGS=-g
 
-all: $(BIN) $(TEST_BIN)
+all: $(BIN) test
+
+test: $(TEST_BIN)
 	./$(TEST_BIN)
 
 %.o: %.cpp $(HEADERS) $(TEST_HEADERS)
