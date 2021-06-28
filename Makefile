@@ -23,7 +23,16 @@ all: $(BIN) test
 test: $(TEST_BIN)
 	./$(TEST_BIN)
 
-%.o: %.cpp $(HEADERS) $(TEST_HEADERS)
+Main.o: Main.cpp $(HEADERS)
+	$(CC) -I$(INCLUDE) $(CPPFLAGS) -c -o $@ $<
+
+src/%.o: src/%.cpp $(HEADERS)
+	$(CC) -I$(INCLUDE) $(CPPFLAGS) -c -o $@ $<
+
+TestMain.o: TestMain.cpp $(HEADERS) $(TEST_HEADERS)
+	$(CC) -I$(INCLUDE) -I$(TEST_INCLUDE) $(CPPFLAGS) -c -o $@ $<
+
+test/src/%.o: test/src/%.cpp $(HEADERS) $(TEST_HEADERS)
 	$(CC) -I$(INCLUDE) -I$(TEST_INCLUDE) $(CPPFLAGS) -c -o $@ $<
 
 $(BIN): $(OBJ) Main.o
