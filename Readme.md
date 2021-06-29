@@ -26,3 +26,19 @@ make -j8
 The Makefile balances simplicity with intelligence. It will incrementally compile only things that change whenever you change a cpp file. However, header changes will rebuild everything. You don't need to change the Makefile to add new headers or sources for either your application or tests.
 
 Tests are allowed to `#include` anything under the application's `include` directory or the tests' include directory (`test/include`). Your product may only `#include` files under `include`.
+
+## Prerequisites
+The makefile assumes you have the `g++` and `make` installed and in your path. If you need to change the compiler, change the `CC` variable on line 1 in the Makefile.
+
+Follow the below instructions depending on your OS to install these prereqs.
+
+### Debian, Ubuntu, many others
+```
+sudo apt update
+sudo apt install g++ make
+```
+
+### macOS
+```
+TBD, probably using brew.
+```
