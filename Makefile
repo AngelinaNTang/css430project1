@@ -23,10 +23,12 @@ OBJ=$(addsuffix .o, $(basename $(SRCS)))
 # Compute .o fiels for tests from test srcs
 TEST_OBJ=$(addsuffix .o, $(basename $(TEST_SRCS)))
 
-# The name of your executable
+# The name of your executable. You'll probably want to put this in your
+# .gitignore so you don't accidently check it in.
 BIN=example
 
-# The name of your test executable
+# The name of your test executable. You'll probably want to also put this
+# in .gitignore so you don't accidently check it in.
 TEST_BIN=tests
 
 # Compiler flags passed to CC when producting .o files
