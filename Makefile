@@ -32,7 +32,7 @@ BIN=example
 TEST_BIN=tests
 
 # Compiler flags passed to CC when producting .o files
-CPPFLAGS=-g
+CPPFLAGS=-std=c++17 -g
 
 # Default target that builds your executable; builds, and runs its tests.
 all: $(BIN) test
